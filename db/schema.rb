@@ -10,40 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180401233211) do
-
-  create_table "runway_models", force: :cascade do |t|
-    t.string "name"
-    t.string "mantra"
-    t.string "photo_url"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_runway_models_on_user_id"
+ActiveRecord::Schema.define(version: 20_180_401_233_211) do
+  create_table 'runway_models', force: :cascade do |t|
+    t.string 'name'
+    t.string 'mantra'
+    t.string 'photo_url'
+    t.integer 'user_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_runway_models_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'email'
+    t.string 'password_digest'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "vote_runway_models", force: :cascade do |t|
-    t.integer "vote_id"
-    t.integer "runway_model_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["runway_model_id"], name: "index_vote_runway_models_on_runway_model_id"
-    t.index ["vote_id"], name: "index_vote_runway_models_on_vote_id"
+  create_table 'vote_runway_models', force: :cascade do |t|
+    t.integer 'vote_id'
+    t.integer 'runway_model_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['runway_model_id'], name: 'index_vote_runway_models_on_runway_model_id'
+    t.index ['vote_id'], name: 'index_vote_runway_models_on_vote_id'
   end
 
-  create_table "votes", force: :cascade do |t|
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_votes_on_user_id"
+  create_table 'votes', force: :cascade do |t|
+    t.integer 'user_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_votes_on_user_id'
   end
-
 end
